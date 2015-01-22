@@ -170,48 +170,29 @@ class BC_Validate_Public {
 	 */
 	public function signupUserBC( $result ) {
 
-		if ( isset( $_POST ) && 'validate-user-signup' == $_POST['stage'] ) {
-
-			$wp_error_username = $result['errors']->get_error_message( 'user_name' );
-			$wp_error_email = $result['errors']->get_error_message( 'user_email' );
-
-			// let WP do it's thing, if there are errors
-			if ( ! empty( $wp_error_username ) || ! empty( $wp_error_email ) ) {
-
-				// check if they've indicated which bc institution they belong to
-				if ( empty( $_POST['bc_inst'] ) ) {
-					$result['errors']->add( 'bc_inst', 'Please indicate which BC institution you are currently employed with' );
-				}
-
-				$domain = $this->parseEmail( $_POST['user_email'] );
-				$ok = $this->checkDomain( $domain );
-
-				if ( false == $ok && empty( $wp_error_email ) ) {
-					$result['errors']->add( 'user_email', 'Please use an email address from a post-secondary institution in British Columbia' );
-				}
-				return $result;
-			} else { // let's throw our own errors
-
-				$custom_errors = new WP_Error();
-				
-				$domain = $this->parseEmail( $_POST['user_email'] );
-				$ok = $this->checkDomain( $domain );
-
-				if( false == $ok ) {
-					$custom_errors->add( 'user_email', 'Please use an email address from a post-secondary institution in British Columbia' );
-				}
-				// check if they've indicated which bc institution they belong to
-				if ( '' == $_POST['bc_inst']  ) {
-					$custom_errors->add( 'bc_inst', 'Please indicate which BC institution you are currently employed with' );
-				}
-				// check if email domain is a bc institution
-				if ( true == $ok && ! empty( $_POST['bc_inst'] ) ) {
-					return $result;
-				}
-			}
-			// send them back to the form with meaningful errors
-			signup_user( $_POST['user_name'], $_POST['user_email'], $custom_errors );
+		if ( isset( $_POST ) && 'validate-user-signup' != $_POST['stage'] ) {
+			return $result;
 		}
+
+		$wp_error_email = $result['errors']->get_error_message( 'user_email' );
+		
+		// if WP finds an error with email
+		if ( ! empty( $_POST['user_email'] ) && empty( $wp_error_email ) ) {
+			$domain = $this->parseEmail( $_POST['user_email'] );
+			$ok = $this->checkDomain( $domain );
+
+			if ( false == $ok ) {
+				$result['errors']->add( 'user_email', 'Please use an email address from a post-secondary institution in British Columbia' );
+			}
+		}
+
+		// check if they've indicated which bc institution they belong to
+		if ( empty( $_POST['bc_inst'] ) ) {
+			$result['errors']->add( 'bc_inst', 'Please indicate which BC institution you are currently employed with' );
+		}
+
+		// and now back to our regular programming
+		return $result;
 	}
 
 	/**
@@ -221,6 +202,10 @@ class BC_Validate_Public {
 	 * @return string
 	 */
 	private function parseEmail( $email_address ) {
+
+		if ( empty( $email_address ) ) {
+			return '';
+		}
 		//get rid of username
 		$part = strstr( $email_address, '@' );
 
@@ -237,6 +222,10 @@ class BC_Validate_Public {
 	 * @return boolean
 	 */
 	private function checkDomain( $domain ) {
+
+		if ( empty( $domain ) ) {
+			return false;
+		}
 
 		if ( in_array( $domain, $this->bc_domains ) ) {
 			return true;
@@ -277,17 +266,16 @@ class BC_Validate_Public {
 			    'bc_inst' => $_POST['bc_inst'],
 			);
 			$meta = array_merge( $add_meta, $meta );
-			return $meta;
 		}
+		return $meta;
 	}
-	
-	public function signupStyleBC(){
-		
+
+	public function signupStyleBC() {
+
 		$html = '<style type="text/css">
 		.mu_register { width: 60%; margin:0 auto; }
 		</style>';
 		echo $html;
-		
 	}
 
 }
