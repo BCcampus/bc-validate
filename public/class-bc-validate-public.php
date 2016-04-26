@@ -221,14 +221,28 @@ class BC_Validate_Public {
 	 * @param string $domain
 	 * @return boolean
 	 */
-	private function checkDomain( $domain ) {
+	private function checkDomain($domain)
+	{
 
-		if ( empty( $domain ) ) {
+		if (empty($domain)) {
 			return false;
 		}
 
-		if ( in_array( $domain, $this->bc_domains ) ) {
+		if (in_array($domain, $this->bc_domains)) {
 			return true;
+		}
+		
+		// target subdomain, ex: geog.ubc.ca
+		$parts = explode('.', $domain);
+		
+		if (count($parts) == 3) {
+			$base_domain = $parts[1] . '.' . $parts[2];
+
+			foreach ($this->bc_domains as $inst) {
+				if (false !== strpos($inst, $base_domain)) {
+					return true;
+				}
+			}
 		}
 		return false;
 	}
