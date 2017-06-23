@@ -1,0 +1,8 @@
+{
+    "name": "bccampus/bc-validate",
+    "type": "wordpress-plugin",
+    "description": "Allows registration with a BC email address",
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    }
+}
