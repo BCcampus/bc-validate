@@ -6,7 +6,7 @@
  * @since      1.0.0
  *
  * @package    BC_Validate
- * @subpackage BC_Validate/includes
+ * @subpackage BC_Validate/inc
  */
 
 /**
@@ -17,7 +17,7 @@
  * run function to execute the list of actions and filters.
  *
  * @package    BC_Validate
- * @subpackage BC_Validate/includes
+ * @subpackage BC_Validate/inc
  * @author     Your Name <email@example.com>
  */
 class BC_Validate_Loader {
@@ -47,8 +47,8 @@ class BC_Validate_Loader {
 	 */
 	public function __construct() {
 
-		$this->actions = array();
-		$this->filters = array();
+		$this->actions = [];
+		$this->filters = [];
 
 	}
 
@@ -96,13 +96,13 @@ class BC_Validate_Loader {
 	 */
 	private function add( $hooks, $hook, $component, $callback, $priority, $accepted_args ) {
 
-		$hooks[] = array(
+		$hooks[] = [
 			'hook'          => $hook,
 			'component'     => $component,
 			'callback'      => $callback,
 			'priority'      => $priority,
-			'accepted_args' => $accepted_args
-		);
+			'accepted_args' => $accepted_args,
+		];
 
 		return $hooks;
 
@@ -116,11 +116,11 @@ class BC_Validate_Loader {
 	public function run() {
 
 		foreach ( $this->filters as $hook ) {
-			add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+			add_filter( $hook['hook'], [ $hook['component'], $hook['callback'] ], $hook['priority'], $hook['accepted_args'] );
 		}
 
 		foreach ( $this->actions as $hook ) {
-			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+			add_action( $hook['hook'], [ $hook['component'], $hook['callback'] ], $hook['priority'], $hook['accepted_args'] );
 		}
 
 	}

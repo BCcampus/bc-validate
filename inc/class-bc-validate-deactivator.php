@@ -6,7 +6,7 @@
  * @since      1.0.0
  *
  * @package    BC_Validate
- * @subpackage BC_Validate/includes
+ * @subpackage BC_Validate/inc
  */
 
 /**
@@ -16,7 +16,7 @@
  *
  * @since      1.0.0
  * @package    BC_Validate
- * @subpackage BC_Validate/includes
+ * @subpackage BC_Validate/inc
  * @author     Your Name <email@example.com>
  */
 class BC_Validate_Deactivator {
@@ -33,6 +33,6 @@ class BC_Validate_Deactivator {
 			return;
 		}
 
-		delete_site_option( 'bc-validate-activated' );	}
+		delete_site_option( 'bc-validate-activated' );  }
 
 }

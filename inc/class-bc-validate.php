@@ -1,13 +1,13 @@
 <?php
 
 /**
- * A class definition that includes attributes and functions used across both the
+ * A class definition that inc attributes and functions used across both the
  * public-facing side of the site and the dashboard.
  *
  * @since      1.0.0
  *
  * @package    BC_Validate
- * @subpackage BC_Validate/includes
+ * @subpackage BC_Validate/inc
  */
 
 /**
@@ -21,7 +21,7 @@
  *
  * @since      1.0.0
  * @package    BC_Validate
- * @subpackage BC_Validate/includes
+ * @subpackage BC_Validate/inc
  * @author     Your Name <email@example.com>
  */
 class BC_Validate {
@@ -66,11 +66,11 @@ class BC_Validate {
 	public function __construct() {
 
 		$this->bc_validate = 'bc-validate';
-		$this->version = '1.0.0';
+		$this->version     = '1.0.0';
 
 		$this->load_dependencies();
 		$this->set_locale();
-//		$this->define_admin_hooks();
+		//      $this->define_admin_hooks();
 		$this->define_public_hooks();
 
 	}
@@ -96,13 +96,13 @@ class BC_Validate {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-bc-validate-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'inc/class-bc-validate-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-bc-validate-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'inc/class-bc-validate-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
@@ -141,10 +141,10 @@ class BC_Validate {
 	 */
 	private function define_admin_hooks() {
 
-//		$plugin_admin = new BC_Validate_Admin( $this->get_bc_validate(), $this->get_version() );
-//
-//		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-//		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		//      $plugin_admin = new BC_Validate_Admin( $this->get_bc_validate(), $this->get_version() );
+		//
+		//      $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		//      $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 	}
 
@@ -159,8 +159,8 @@ class BC_Validate {
 
 		$plugin_public = new BC_Validate_Public( $this->get_bc_validate(), $this->get_version() );
 
-//		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-//		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		//      $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+		//      $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_filter( 'wpmu_validate_user_signup', $plugin_public, 'signupUserBC' );
 		$this->loader->add_action( 'signup_extra_fields', $plugin_public, 'signupExtraBC' );
 		$this->loader->add_filter( 'add_signup_meta', $plugin_public, 'signupMetaBC' );

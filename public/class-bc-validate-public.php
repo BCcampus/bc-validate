@@ -45,7 +45,7 @@ class BC_Validate_Public {
 	 *
 	 * @var array - list of email domians for bc instiutions
 	 */
-	private $bc_domains = array(
+	private $bc_domains = [
 		'bccampus.ca',
 		'bcit.ca',
 		'camosun.ca',
@@ -75,39 +75,39 @@ class BC_Validate_Public {
 		'vcc.ca',
 		'viu.ca',
 		'yukoncollege.yk.ca',
-	);
-	private $bc_inst = array(
-		""      => "-- Select Option --",
-		"bcc"   => "BCcampus",
-		"bcit"  => "BC Institute of Technology",
-		"cam"   => "Camosun College",
-		"capu"  => "Capilano University",
-		"cnc"   => "College of New Caledonia",
-		"cotr"  => "College of the Rockies",
-		"dc"    => "Douglas College",
-		"ecuad" => "Emily Carr University of Art and Design",
-		"iig"   => "Institute of Indigenous Government",
-		"jibc"  => "Justice Institute of B.C.",
-		"kpu"   => "Kwantlen Polytechnic University",
-		"lang"  => "Langara College",
-		"nvit"  => "Nicola Valley Institute of Technology",
-		"nic"   => "North Island College",
-		"nlc"   => "Northern Lights College",
-		"nwcc"  => "Northwest Community College",
-		"okan"  => "Okanagan College",
-		"rru"   => "Royal Roads University",
-		"selk"  => "Selkirk College",
-		"sfu"   => "Simon Fraser University",
-		"tru"   => "Thompson Rivers University",
-		"truo"  => "Thompson Rivers University - Open Learning",
-		"ubc"   => "University of British Columbia",
-		"unbc"  => "University of Northern British Columbia",
-		"ufv"   => "University of the Fraser Valley",
-		"uvic"  => "University of Victoria",
-		"vcc"   => "Vancouver Community College",
-		"viu"   => "Vancouver Island University",
-		"yukc"  => "Yukon College"
-	);
+	];
+	private $bc_inst    = [
+		''      => '-- Select Option --',
+		'bcc'   => 'BCcampus',
+		'bcit'  => 'BC Institute of Technology',
+		'cam'   => 'Camosun College',
+		'capu'  => 'Capilano University',
+		'cnc'   => 'College of New Caledonia',
+		'cotr'  => 'College of the Rockies',
+		'dc'    => 'Douglas College',
+		'ecuad' => 'Emily Carr University of Art and Design',
+		'iig'   => 'Institute of Indigenous Government',
+		'jibc'  => 'Justice Institute of B.C.',
+		'kpu'   => 'Kwantlen Polytechnic University',
+		'lang'  => 'Langara College',
+		'nvit'  => 'Nicola Valley Institute of Technology',
+		'nic'   => 'North Island College',
+		'nlc'   => 'Northern Lights College',
+		'nwcc'  => 'Northwest Community College',
+		'okan'  => 'Okanagan College',
+		'rru'   => 'Royal Roads University',
+		'selk'  => 'Selkirk College',
+		'sfu'   => 'Simon Fraser University',
+		'tru'   => 'Thompson Rivers University',
+		'truo'  => 'Thompson Rivers University - Open Learning',
+		'ubc'   => 'University of British Columbia',
+		'unbc'  => 'University of Northern British Columbia',
+		'ufv'   => 'University of the Fraser Valley',
+		'uvic'  => 'University of Victoria',
+		'vcc'   => 'Vancouver Community College',
+		'viu'   => 'Vancouver Island University',
+		'yukc'  => 'Yukon College',
+	];
 
 	/**
 	 * Initialize the class and set its properties.
@@ -140,7 +140,7 @@ class BC_Validate_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-//		wp_enqueue_style( $this->bc_validate, plugin_dir_url( __FILE__ ) . 'css/bc-validate-public.css', array(), $this->version, 'all' );
+		//      wp_enqueue_style( $this->bc_validate, plugin_dir_url( __FILE__ ) . 'css/bc-validate-public.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -161,7 +161,7 @@ class BC_Validate_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-//		wp_enqueue_script( $this->bc_validate, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
+		//      wp_enqueue_script( $this->bc_validate, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
 	}
 
 	/**
@@ -269,7 +269,7 @@ class BC_Validate_Public {
 			$html .= "<option value='{$id}'>{$val}</option>";
 		}
 		$html .= '</select><br>'
-		         . '(Must be a faculty member currently working at a post secondary institute in British Columbia)</p>';
+				 . '(Must be a faculty member currently working at a post secondary institute in British Columbia)</p>';
 
 		echo $html;
 	}
@@ -282,9 +282,9 @@ class BC_Validate_Public {
 	 */
 	public function signupMetaBC( $meta ) {
 		if ( isset( $_POST['bc_inst'] ) ) {
-			$add_meta = array(
+			$add_meta = [
 				'bc_inst' => $_POST['bc_inst'],
-			);
+			];
 			$meta     = array_merge( $add_meta, $meta );
 		}
 

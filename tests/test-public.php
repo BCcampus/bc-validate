@@ -6,7 +6,7 @@
  * Date: 2016-04-26
  * Time: 9:04 AM
  */
-class BC_Validate_PublicTest extends WP_UnitTestCase {
+class PublicTest extends WP_UnitTestCase {
 
 
 	/**
