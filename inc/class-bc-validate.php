@@ -22,7 +22,7 @@
  * @since      1.0.0
  * @package    BC_Validate
  * @subpackage BC_Validate/inc
- * @author     Your Name <email@example.com>
+ * @author     Brad Payne
  */
 class BC_Validate {
 
@@ -129,22 +129,6 @@ class BC_Validate {
 		$plugin_i18n->set_domain( $this->get_bc_validate() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
-	}
-
-	/**
-	 * Register all of the hooks related to the dashboard functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_admin_hooks() {
-
-		//      $plugin_admin = new BC_Validate_Admin( $this->get_bc_validate(), $this->get_version() );
-		//
-		//      $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		//      $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 	}
 

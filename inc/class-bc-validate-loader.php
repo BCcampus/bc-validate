@@ -18,7 +18,7 @@
  *
  * @package    BC_Validate
  * @subpackage BC_Validate/inc
- * @author     Your Name <email@example.com>
+ * @author     Brad Payne
  */
 class BC_Validate_Loader {
 

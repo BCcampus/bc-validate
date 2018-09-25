@@ -1,9 +1,10 @@
 === BC Post-Secondary Validator ===
 Contributors: bdolor
 Tags: authentication
-Requires at least: 4.1
-Tested up to: 4.1
-Stable tag: 1.0.0
+Requires at least: 4.9.7
+Tested up to: 4.9.7
+Stable tag: 1.0.1
+Requires PHP: 7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +24,8 @@ Also allows a user to identify which institute they are from.
 
 
 == Changelog ==
+= 1.0.1 =
+* widespread updates
 
 = 1.0 =
 * Initial commit

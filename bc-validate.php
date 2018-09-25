@@ -6,15 +6,15 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @since             1.0.1
+ * @since             1.0.0
  * @package           BC_Validate
  *
  * @wordpress-plugin
  * Plugin Name:       BC Post-Secondary Validator
  * Description:       Provides a mechanism to validate whether a user's email address is part of the BC Post-Secondary System
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Brad Payne
- * Author URI:        http://bradpayne.ca
+ * Author URI:        https://github.com/bdolor
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       bc-validate
