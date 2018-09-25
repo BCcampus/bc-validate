@@ -1,5 +1,5 @@
 {
-  "name": "bccampus/bc-validate",
+  "name": "BCcampus/bc-validate",
   "type": "wordpress-plugin",
   "description": "Allows registration with a BC email address",
   "version": "1.0.1",

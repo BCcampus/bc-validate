@@ -39,3 +39,13 @@ before_deploy:
 - cd ../
 - wp dist-archive $TRAVIS_PROJECT_SLUG $TRAVIS_BUILD_DIR/$TRAVIS_PROJECT_SLUG-$TRAVIS_TAG.zip
 - cd $TRAVIS_BUILD_DIR
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: IDWBVAtZPbJC6Xn0t8s4aP+aDEI78SjhIS9XZ+fjpmAd5N/ZFIsU+C+PaIFm9I60h0iyMrGUc2bwFaCwjByxOf5CE7r61lu6EFZaw7Fhm89Eulpv9uvGcBDww1GecmERLMDd0QewjKb3y7vWyuDSKOelJ9dsdQuv21LOQuPMJre7iUtXNap6KJZNl9aCluNh4NUrQ0x8S+/nnxQK4CnyBgGacN6EoNlZo9oeKCw6hT4Y4/QGi/pEXPt5GKyoAHNOBNBXMc1XZS20cXA9dAyi0kAIhshT3VujWVzyxuX/3Yro4908gRyjsw4UC8zLtlsAoKIXUY+uCVG99mJ1a1zVKrYYBEGP8NDZoWllHP/YcIo4YGQyIIOgG9YRaoXmTxZ5QRdx8Xpv0st9NDVNCo5jxB3AyiTlktHBvPjzlTuUqGaZ/f38ZXSwJI0KuiMdbTDMaj6YcQjKJ9HRxRxHLrIdUC601CyGv0DTuzhG9Ohba+p1wuDQZsUhXtuo00YwzZ5B01zbSMm47UVed6qHMhxcBlxe0nhfTrhLbWCBhEJxr+6c/6NNDNqJe2V3t0LCiHzK+SB8LNlm8yktyUp9fiG8xWlHOdwCLJttjV8Nz6l802Y2snaI9l2Kjm7Ngp9EehDPS/dyUc/XCbMYpZeARrkCoCfTQxBdNQEidv3jfnD7ydI=
+  file: bc-validate-$TRAVIS_TAG.zip
+  on:
+    tags: true
+    repo: BCcampus/bc-validate
+    branch: dev
