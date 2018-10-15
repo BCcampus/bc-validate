@@ -18,6 +18,7 @@
   },
   "scripts": {
     "test": [
+      "vendor/bin/phpunit --configuration phpunit.xml",
       "@standards"
     ],
     "standards": [

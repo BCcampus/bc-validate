@@ -75,8 +75,21 @@ class BC_Validate_Public {
 		'vcc.ca',
 		'viu.ca',
 		'yukoncollege.yk.ca',
+		'ascenda.com',
+		'alexandercollege.ca',
+		'columbiacollege.ca',
+		'coquitlamcollege.com',
+		'corpuschristi.ca',
+		'etoncollege.ca',
+		'fraseric.ca',
+		'lasallecollegevancouver.com',
+		'necvancouver.org',
+		'pcu-whs.ca',
+		'questu.ca',
+		'twu.ca',
+		'ucanwest.ca',
 	];
-	private $bc_inst    = [
+	private $bc_inst = [
 		''      => '-- Select Option --',
 		'bcc'   => 'BCcampus',
 		'bcit'  => 'BC Institute of Technology',
@@ -107,6 +120,19 @@ class BC_Validate_Public {
 		'vcc'   => 'Vancouver Community College',
 		'viu'   => 'Vancouver Island University',
 		'yukc'  => 'Yukon College',
+		'asm'   => 'Acsenda School of Managment',
+		'ac'    => 'Alexander College',
+		'cc'    => 'Columbia College',
+		'coq'   => 'Coquitlam College',
+		'ccc'   => 'Corpus Christi College',
+		'ec'    => 'Eaton College',
+		'fic'   => 'Fraser International College',
+		'lcv'   => 'LaSalle College Vancouver',
+		'nec'   => 'Native Education College',
+		'pcu'   => 'Pacific Coast University for Workplace Health Sciences',
+		'quc'   => 'Quest University Canada',
+		'twu'   => 'Trinity Western University',
+		'ucw'   => 'University Canada West',
 	];
 
 	/**
@@ -178,7 +204,8 @@ class BC_Validate_Public {
 	}
 
 	/**
-	 * Compares the domain of the users email to a list of BC Institutional domains
+	 * Compares the domain of the users email to a list of BC Institutional
+	 * domains
 	 *
 	 * @param string $domain
 	 *
@@ -227,7 +254,7 @@ class BC_Validate_Public {
 			$html .= "<option value='{$id}'>{$val}</option>";
 		}
 		$html .= '</select><br>'
-				 . '(Must be a faculty member currently working at a post secondary institute in British Columbia)</p>';
+		         . '(Must be a faculty member currently working at a post secondary institute in British Columbia)</p>';
 
 		echo $html;
 	}
