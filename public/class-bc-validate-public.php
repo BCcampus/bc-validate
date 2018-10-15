@@ -52,6 +52,7 @@ class BC_Validate_Public {
 		'camosun.bc.ca',
 		'capilanou.ca',
 		'cnc.bc.ca',
+		'coastmountaincollege.ca',
 		'cotr.bc.ca',
 		'douglascollege.ca',
 		'ecuad.ca',
@@ -95,18 +96,17 @@ class BC_Validate_Public {
 		'bcit'  => 'BC Institute of Technology',
 		'cam'   => 'Camosun College',
 		'capu'  => 'Capilano University',
+		'cmc'   => 'Coast Mountain College',
 		'cnc'   => 'College of New Caledonia',
 		'cotr'  => 'College of the Rockies',
 		'dc'    => 'Douglas College',
-		'ecuad' => 'Emily Carr University of Art and Design',
-		'iig'   => 'Institute of Indigenous Government',
+		'ecuad' => 'Emily Carr University of Art + Design',
 		'jibc'  => 'Justice Institute of B.C.',
 		'kpu'   => 'Kwantlen Polytechnic University',
 		'lang'  => 'Langara College',
 		'nvit'  => 'Nicola Valley Institute of Technology',
 		'nic'   => 'North Island College',
 		'nlc'   => 'Northern Lights College',
-		'nwcc'  => 'Northwest Community College',
 		'okan'  => 'Okanagan College',
 		'rru'   => 'Royal Roads University',
 		'selk'  => 'Selkirk College',
@@ -254,7 +254,7 @@ class BC_Validate_Public {
 			$html .= "<option value='{$id}'>{$val}</option>";
 		}
 		$html .= '</select><br>'
-		         . '(Must be a faculty member currently working at a post secondary institute in British Columbia)</p>';
+		         . '(Must be a faculty member or staff currently working at a post-secondary institute in British Columbia or the Yukon.)</p>';
 
 		echo $html;
 	}
