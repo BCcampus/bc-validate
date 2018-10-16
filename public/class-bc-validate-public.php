@@ -1,15 +1,4 @@
 <?php
-
-/**
- * The public-facing functionality of the plugin.
- *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    BC_Validate
- * @subpackage BC_Validate/public
- */
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -90,7 +79,7 @@ class BC_Validate_Public {
 		'twu.ca',
 		'ucanwest.ca',
 	];
-	private $bc_inst = [
+	private $bc_inst    = [
 		''      => '-- Select Option --',
 		'bcc'   => 'BCcampus',
 		'bcit'  => 'BC Institute of Technology',
@@ -149,11 +138,11 @@ class BC_Validate_Public {
 	}
 
 	/**
-	 * Validates the user input and throws errors
+	 * Validates the user input and generates error messages for users
 	 *
-	 * @param array $result
+	 * @param $result
 	 *
-	 * @return type
+	 * @return mixed
 	 */
 	public function signupUserBC( $result ) {
 
@@ -168,7 +157,7 @@ class BC_Validate_Public {
 			$domain = $this->parseEmail( $_POST['user_email'] );
 			$ok     = $this->checkDomain( $domain );
 
-			if ( false == $ok ) {
+			if ( false === $ok ) {
 				$result['errors']->add( 'user_email', 'Please use an email address from a post-secondary institution in British Columbia' );
 			}
 		}
@@ -224,7 +213,7 @@ class BC_Validate_Public {
 		// target subdomain, ex: geog.ubc.ca
 		$parts = explode( '.', $domain );
 
-		if ( count( $parts ) == 3 ) {
+		if ( count( $parts ) === 3 ) {
 			$base_domain = $parts[1] . '.' . $parts[2];
 
 			foreach ( $this->bc_domains as $inst ) {
@@ -254,7 +243,7 @@ class BC_Validate_Public {
 			$html .= "<option value='{$id}'>{$val}</option>";
 		}
 		$html .= '</select><br>'
-		         . '(Must be a faculty member or staff currently working at a post-secondary institute in British Columbia or the Yukon.)</p>';
+				 . '(Must be a faculty member or staff currently working at a post-secondary institute in British Columbia or the Yukon.)</p>';
 
 		echo $html;
 	}
