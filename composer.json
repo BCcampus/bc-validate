@@ -2,7 +2,7 @@
   "name": "BCcampus/bc-validate",
   "type": "wordpress-plugin",
   "description": "Allows registration with a BC email address",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/bccampus/bc-validate",
   "config": {
     "platform": {

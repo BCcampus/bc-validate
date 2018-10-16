@@ -1,15 +1,4 @@
 <?php
-
-/**
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
- *
- * @since      1.0.0
- *
- * @package    BC_Validate
- * @subpackage BC_Validate/inc
- */
-
 /**
  * Define the internationalization functionality.
  *

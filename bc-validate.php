@@ -12,7 +12,7 @@
  * @wordpress-plugin
  * Plugin Name:       BC Post-Secondary Validator
  * Description:       Provides a mechanism to validate whether a user's email address is part of the BC Post-Secondary System
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Brad Payne
  * Author URI:        https://github.com/bdolor
  * License:           GPL-2.0+

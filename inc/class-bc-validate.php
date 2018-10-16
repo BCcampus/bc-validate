@@ -1,15 +1,4 @@
 <?php
-
-/**
- * A class definition that inc attributes and functions used across both the
- * public-facing side of the site and the dashboard.
- *
- * @since      1.0.0
- *
- * @package    BC_Validate
- * @subpackage BC_Validate/inc
- */
-
 /**
  * The core plugin class.
  *
@@ -66,7 +55,7 @@ class BC_Validate {
 	public function __construct() {
 
 		$this->bc_validate = 'bc-validate';
-		$this->version     = '1.0.0';
+		$this->version     = '1.0.2';
 
 		$this->load_dependencies();
 		$this->set_locale();

@@ -1,12 +1,4 @@
 <?php
-
-/**
- * @since      1.0.0
- *
- * @package    BC_Validate
- * @subpackage BC_Validate/inc
- */
-
 /**
  * Fired during plugin activation.
  *
