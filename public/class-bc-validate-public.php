@@ -108,7 +108,7 @@ class BC_Validate_Public {
 		'uvic'  => 'University of Victoria',
 		'vcc'   => 'Vancouver Community College',
 		'viu'   => 'Vancouver Island University',
-		'yukc'  => 'Yukon College',
+		'yukc'  => 'Yukon University',
 		'asm'   => 'Acsenda School of Managment',
 		'ac'    => 'Alexander College',
 		'cc'    => 'Columbia College',
